@@ -6,10 +6,7 @@ Infrastructure as Code for an application with Front and Backend architecture
 Following the Infrastructure as Code [IaC](https://en.wikipedia.org/wiki/Infrastructure_as_code) principles
 This repositority contains [Terraform](https://learn.hashicorp.com/terraform?utm_source=terraform_io&utm_content=terraform_io_hero) code to create and manage:
 * [EKS Cluster](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html)
-* Jenkins pipeline do build and deploy app resources   
- 
-This repository is partnered with the [gitops-k8s-apps](https://github.com/rfcoutinho/gitops-k8s-apps) repository, so you can control your Kuberentes applications directly from it.
-
+* Jenkins pipeline do build and deploy app resources
 
 ## Prerequisites  and recommendations :heavy_check_mark:
 1. Dedicated IAM Role to be used by Terraform with sufficient permissions to create and manage resources on AWS. :cop:
