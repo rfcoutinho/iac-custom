@@ -1,1 +1,3 @@
 artifacts/ec2/jenkins
+terraform/.terraform
+terraform/.backend.hcl
