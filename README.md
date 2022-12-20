@@ -42,12 +42,14 @@ terraform apply
 
 4. Configure Jenkins Setup
 
-Access Jenkins setup page and finish the installation via browser, e.g.
+Access Jenkins setup page after all resources were successfully provioned 
 ```
 http://13.40.175.180:8080/
 ```
 
-5.
+5. Create a new project pipeline using the Jenkinsfile on `artifacts/`  directory
+
+6. Choose the appropriate time and date to start the building process
 
 ## License
 
