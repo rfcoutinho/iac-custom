@@ -7,5 +7,5 @@
   sudo apt update
   sudo apt install jenkins -y
   sudo systemctl start jenkins
-  sudo install maven -y
+  sudo apt install maven -y
 
