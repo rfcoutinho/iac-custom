@@ -25,8 +25,10 @@ pipeline {
         stage('Push Image to ECR') {
             steps {
                 echo 'Push Image to ECR....'
-                sh "aws ecr get-login-password --region eu-west-2 | docker login --username rcoutinho --password-stdin 992122884453.dkr.ecr.eu-west-2.amazonaws.com"
-                sh "aws ecr get-login-password --region eu-west-2 | docker login --username rcoutinho --password-stdin 992122884453.dkr.ecr.eu-west-2.amazonaws.com"
+                script {
+                    docker.withRegistry("992122884453.dkr.ecr.eu-west-2.amazonaws.com", "ecr:eu-west-2:credential-id") {
+                    docker.image("validator-backend-image").push()}
+                }
             }
         }
         stage('Deploy') {
