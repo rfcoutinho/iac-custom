@@ -2,7 +2,7 @@
 resource "aws_instance" "jenkins" {
 
   ami                    = "ami-035469b606478d63d"
-  instance_type          = "t2.micro"
+  instance_type          = "t3.medium"
   key_name               = aws_key_pair.jenkins_key.key_name
   monitoring             = true
   vpc_security_group_ids = [aws_security_group.ec2.id]
