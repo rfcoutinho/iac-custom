@@ -16,11 +16,11 @@ resource "aws_instance" "jenkins" {
 
 
   connection {
-    type     = "ssh"
-    user     = "ubuntu"
-    password = ""
+    type        = "ssh"
+    user        = "ubuntu"
+    password    = ""
     private_key = file("../artifacts/ec2/jenkins")
-    host     = self.public_ip
+    host        = self.public_ip
   }
 
   provisioner "file" {
@@ -37,9 +37,19 @@ resource "aws_instance" "jenkins" {
 }
 
 
-
 resource "aws_key_pair" "jenkins_key" {
   key_name   = "jenkins.pub"
   public_key = file("../artifacts/ec2/jenkins.pub")
+}
+
+resource "aws_iam_policy_attachment" "attach" {
+  name       = "jenkins-attach"
+  roles      = ["${aws_iam_role.role.name}"]
+  policy_arn = aws_iam_policy.policy.arn
+}
+
+resource "aws_iam_instance_profile" "profile" {
+  name = "jenkins-profile"
+  role = aws_iam_role.role.name
 }
 

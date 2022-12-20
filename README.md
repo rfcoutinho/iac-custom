@@ -40,6 +40,15 @@ terraform plan
 terraform apply
 ```
 
+4. Configure Jenkins Setup
+
+Access Jenkins setup page and finish the installation via browser, e.g.
+```
+http://13.40.175.180:8080/
+```
+
+5.
+
 ## License
 
 MIT
