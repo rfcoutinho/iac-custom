@@ -16,20 +16,8 @@ module "vpc" {
   enable_dns_hostnames = true
 
   tags = {
-    Name                                        = "main"
-    Terraform                                   = "true"
-    Environment                                 = "dev"
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-
+    Name        = "main"
+    Terraform   = "true"
+    Environment = "dev"
   }
-  public_subnet_tags = {
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/elb"                    = "1"
-  }
-
-  private_subnet_tags = {
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/internal-elb"           = "1"
-  }
-
 }
